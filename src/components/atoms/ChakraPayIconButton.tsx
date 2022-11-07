@@ -6,7 +6,7 @@ type Props = {
   onClick: () => void;
 };
 
-const MenuIconButton: FC<Props> = memo((props) => {
+const ChakraPayIconButton: FC<Props> = memo((props) => {
   const { onClick } = props;
 
   return (
@@ -21,4 +21,4 @@ const MenuIconButton: FC<Props> = memo((props) => {
   );
 });
 
-export default MenuIconButton;
+export default ChakraPayIconButton;

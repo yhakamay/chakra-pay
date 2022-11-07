@@ -1,9 +1,9 @@
 import { useDisclosure, Flex, Button } from '@chakra-ui/react';
 import { FC, memo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import MenuIconButton from '../atoms/MenuIconButton';
-import Logo from '../atoms/Logo';
-import MenuDrawer from '../molecules/MenuDrawer';
+import ChakraPayIconButton from '../atoms/ChakraPayIconButton';
+import ChakraPayLogo from '../atoms/ChakraPayLogo';
+import ChakraPayDrawer from '../molecules/ChakraPayDrawer';
 
 const Header: FC = memo(() => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -15,7 +15,7 @@ const Header: FC = memo(() => {
   return (
     <>
       <Flex as="nav" align="center" justify="space-between" padding={{ base: 3, md: 5 }}>
-        <Logo onClick={onClickHome}>yhakamay-dev</Logo>
+        <ChakraPayLogo onClick={onClickHome}>Chakra Pay</ChakraPayLogo>
         <Flex
           align="center"
           fontSize="sm"
@@ -24,9 +24,9 @@ const Header: FC = memo(() => {
           <Button variant="ghost" onClick={onClickUsers}>Users</Button>
           <Button variant="ghost" onClick={onClickSettings}>Settings</Button>
         </Flex>
-        <MenuIconButton onClick={onOpen} />
+        <ChakraPayIconButton onClick={onOpen} />
       </Flex>
-      <MenuDrawer
+      <ChakraPayDrawer
         isOpen={isOpen}
         onClose={onClose}
         onClickUsers={onClickUsers}

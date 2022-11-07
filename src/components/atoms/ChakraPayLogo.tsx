@@ -6,7 +6,7 @@ type Props = {
   children: React.ReactNode;
 };
 
-const Logo: FC<Props> = memo((props) => {
+const ChakraPayLogo: FC<Props> = memo((props) => {
   const { onClick, children } = props;
 
   return (
@@ -18,4 +18,4 @@ const Logo: FC<Props> = memo((props) => {
   );
 });
 
-export default Logo;
+export default ChakraPayLogo;

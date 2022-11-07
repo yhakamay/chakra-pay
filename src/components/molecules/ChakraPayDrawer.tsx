@@ -11,7 +11,7 @@ type Props = {
   onClickSettings: () => void;
 };
 
-const MenuDrawer: FC<Props> = memo((props) => {
+const ChakraPayDrawer: FC<Props> = memo((props) => {
   const {
     isOpen, onClose, onClickUsers, onClickSettings,
   } = props;
@@ -30,4 +30,4 @@ const MenuDrawer: FC<Props> = memo((props) => {
   );
 });
 
-export default MenuDrawer;
+export default ChakraPayDrawer;
