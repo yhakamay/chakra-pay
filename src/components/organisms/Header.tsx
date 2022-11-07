@@ -1,18 +1,9 @@
-import { HamburgerIcon } from '@chakra-ui/icons';
-import {
-  useDisclosure,
-  Flex,
-  Heading,
-  Box,
-  IconButton,
-  Drawer,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerBody,
-  Button,
-} from '@chakra-ui/react';
+import { useDisclosure, Flex, Box } from '@chakra-ui/react';
 import { FC, memo } from 'react';
 import { Link } from 'react-router-dom';
+import HamburgerIconButton from '../atoms/HamburgerIconButton';
+import Logo from '../atoms/Logo';
+import HeaderDrawer from '../molecules/HeaderDrawer';
 
 const Header: FC = memo(() => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -20,17 +11,7 @@ const Header: FC = memo(() => {
   return (
     <>
       <Flex as="nav" align="center" justify="space-between" padding={{ base: 3, md: 5 }}>
-        <Flex align="center" as="a" mr="8" _hover={{ cursor: 'pointer' }}>
-          <Heading
-            as="h1"
-            fontSize={{
-              base: 'md',
-              md: 'lg',
-            }}
-          >
-            Header
-          </Heading>
-        </Flex>
+        <Logo>yhakamay-dev</Logo>
         <Flex
           align="center"
           fontSize="sm"
@@ -46,25 +27,9 @@ const Header: FC = memo(() => {
             <Link to="/settings">Settings</Link>
           </Box>
         </Flex>
-        <IconButton
-          onClick={onOpen}
-          aria-label="hamburger icon"
-          icon={<HamburgerIcon />}
-          size="sm"
-          variant="outline"
-          display={{ base: 'block', md: 'none' }}
-        />
+        <HamburgerIconButton onClick={onOpen} />
       </Flex>
-      <Drawer placement="left" size="xs" onClose={onClose} isOpen={isOpen}>
-        <DrawerOverlay>
-          <DrawerContent>
-            <DrawerBody p={0}>
-              <Button w="100%">Users</Button>
-              <Button w="100%">Settings</Button>
-            </DrawerBody>
-          </DrawerContent>
-        </DrawerOverlay>
-      </Drawer>
+      <HeaderDrawer isOpen={isOpen} onClose={onClose} />
     </>
   );
 });
