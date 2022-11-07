@@ -3,7 +3,7 @@ import { FC, memo } from 'react';
 import { Link } from 'react-router-dom';
 import MenuIconButton from '../atoms/MenuIconButton';
 import Logo from '../atoms/Logo';
-import HeaderDrawer from '../molecules/HeaderDrawer';
+import MenuDrawer from '../molecules/MenuDrawer';
 
 const Header: FC = memo(() => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -29,7 +29,7 @@ const Header: FC = memo(() => {
         </Flex>
         <MenuIconButton onClick={onOpen} />
       </Flex>
-      <HeaderDrawer isOpen={isOpen} onClose={onClose} />
+      <MenuDrawer isOpen={isOpen} onClose={onClose} />
     </>
   );
 });

@@ -10,7 +10,7 @@ type Props = {
   onClose: () => void;
 };
 
-const HeaderDrawer: FC<Props> = memo((props) => {
+const MenuDrawer: FC<Props> = memo((props) => {
   const { isOpen, onClose } = props;
 
   return (
@@ -35,4 +35,4 @@ const HeaderDrawer: FC<Props> = memo((props) => {
   );
 });
 
-export default HeaderDrawer;
+export default MenuDrawer;
