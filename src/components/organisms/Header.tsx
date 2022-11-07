@@ -1,7 +1,7 @@
 import { useDisclosure, Flex, Box } from '@chakra-ui/react';
 import { FC, memo } from 'react';
 import { Link } from 'react-router-dom';
-import HamburgerIconButton from '../atoms/HamburgerIconButton';
+import MenuIconButton from '../atoms/MenuIconButton';
 import Logo from '../atoms/Logo';
 import HeaderDrawer from '../molecules/HeaderDrawer';
 
@@ -27,7 +27,7 @@ const Header: FC = memo(() => {
             <Link to="/settings">Settings</Link>
           </Box>
         </Flex>
-        <HamburgerIconButton onClick={onOpen} />
+        <MenuIconButton onClick={onOpen} />
       </Flex>
       <HeaderDrawer isOpen={isOpen} onClose={onClose} />
     </>

@@ -6,7 +6,7 @@ type Props = {
   onClick: () => void;
 };
 
-const HamburgerIconButton: FC<Props> = memo((props) => {
+const MenuIconButton: FC<Props> = memo((props) => {
   const { onClick } = props;
 
   return (
@@ -21,4 +21,4 @@ const HamburgerIconButton: FC<Props> = memo((props) => {
   );
 });
 
-export default HamburgerIconButton;
+export default MenuIconButton;
