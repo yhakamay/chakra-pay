@@ -3,31 +3,26 @@ import {
   Drawer, DrawerBody, DrawerContent, DrawerOverlay,
 } from '@chakra-ui/react';
 import { FC, memo } from 'react';
-import { Link } from 'react-router-dom';
 
 type Props = {
   isOpen: boolean;
   onClose: () => void;
+  onClickUsers: () => void;
+  onClickSettings: () => void;
 };
 
 const MenuDrawer: FC<Props> = memo((props) => {
-  const { isOpen, onClose } = props;
+  const {
+    isOpen, onClose, onClickUsers, onClickSettings,
+  } = props;
 
   return (
     <Drawer placement="left" size="xs" onClose={onClose} isOpen={isOpen}>
       <DrawerOverlay>
         <DrawerContent>
           <DrawerBody p={0}>
-            <Button w="100%">
-              <Link to="/users">
-                Users
-              </Link>
-            </Button>
-            <Button w="100%">
-              <Link to="/settings">
-                Settings
-              </Link>
-            </Button>
+            <Button variant="ghost" onClick={onClickUsers} w="100%">Users</Button>
+            <Button variant="ghost" onClick={onClickSettings} w="100%">Settings</Button>
           </DrawerBody>
         </DrawerContent>
       </DrawerOverlay>
